@@ -19,7 +19,8 @@ jobs:
     - name: Step 01 - Terraform Setup
       uses: hashicorp/setup-terraform@v3
       with:
-        terraform_version: $TERRAFORM_VERSION
+        terraform_version: ${{ env.TF_VERSION }}
+        terraform_wrapper: false
 
     - name: Step 02 - CheckOut GitHub Repo
       uses: actions/checkout@v4
